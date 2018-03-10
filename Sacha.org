@@ -628,9 +628,7 @@ it work. Some things still aren't quite right.
   (set-face-background 'secondary-selection "lightblue")
   (set-face-background 'font-lock-doc-face "black")
   (set-face-foreground 'font-lock-doc-face "wheat")
-  (set-face-background 'font-lock-string-face "black")
-  (set-face-foreground 'org-todo "green")
-  (set-face-background 'org-todo "black"))
+  (set-face-background 'font-lock-string-face "black"))
 (use-package color-theme-solarized :config (my/setup-color-theme))
 #+END_SRC
 
@@ -1873,6 +1871,8 @@ And sorting:
      (setq org-show-notification-handler 'message)
      (setq org-clock-report-include-clocking-task t))
     :config
+     (set-face-foreground 'org-todo "green")
+     (set-face-background 'org-todo "black")
      (org-clock-persistence-insinuate))
  #+end_src
 
