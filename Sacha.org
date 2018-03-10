@@ -1280,7 +1280,7 @@ From https://github.com/purcell/emacs.d/blob/master/lisp/init-auto-complete.el -
 | qc    | http://sachachua.com/blog/emacs-chat/ |
 
 #+BEGIN_SRC emacs-lisp :var data=abbrev :tangle yes
-(mapc (lambda (x) (define-global-abbrev (car x) (cadr x))) (cddr data))
+(mapc (lambda (x) (define-global-abbrev (car x) (cadr x))) data)
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp :tangle yes
