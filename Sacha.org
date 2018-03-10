@@ -126,6 +126,7 @@ I keep slightly more sensitive information in a separate file so that I can easi
 
 #+begin_src emacs-lisp :tangle yes
 (use-package dash)
+(use-package diminish)
 #+end_src
 
 *** Backups
