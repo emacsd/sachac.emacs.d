@@ -5958,7 +5958,9 @@ creates interactive functions, and some code that calls it for my [[https://gith
              (-filter (-not #'file-directory-p)
                       (-filter #'file-executable-p (directory-files directory t))))))
 
-  (my/convert-shell-scripts-to-interactive-commands "~/bin")
+  (defvar my/shell-scripts-directory (file-name-directory "~/bin"))
+  (unless (file-exists-p my/shell-scripts-directory)
+    (my/convert-shell-scripts-to-interactive-commands my/shell-scripts-directory))
 #+end_src
 
 Let's see how that goes!
