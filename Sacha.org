@@ -85,10 +85,12 @@ Here's how we start:
 *** Add package sources
 
 #+BEGIN_SRC emacs-lisp :tangle yes
-(unless (assoc-default "melpa" package-archives)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t))
-(unless (assoc-default "org" package-archives)
-  (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t))
+(setq package-archives
+      '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+        ("melpa" . "http://elpa.emacs-china.org/melpa/")
+        ("org"   . "http://elpa.emacs-china.org/org/")))
+(unless (file-exists-p package-user-dir)
+  (package-refresh-contents))
 #+END_SRC
 
 Use =M-x package-refresh-contents= to reload the list of packages
