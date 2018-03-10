@@ -613,7 +613,8 @@ color-theme in ELPA was a little odd, though, so we define some advice to make
 it work. Some things still aren't quite right.
 
 #+BEGIN_SRC emacs-lisp :tangle yes
-(use-package color-theme)
+(use-package color-theme
+  :init (setq color-theme-libraries '()))
 (defadvice color-theme-alist (around sacha activate)
   (if (ad-get-arg 0)
       ad-do-it
