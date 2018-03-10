@@ -1860,6 +1860,8 @@ And sorting:
 
  #+begin_src emacs-lisp :tangle yes
    (use-package org
+    :custom-face
+     (org-todo ((t (:background "black" :foreground "green"))))
     :init
     (progn
      (setq org-expiry-inactive-timestamps t)
@@ -1872,8 +1874,6 @@ And sorting:
      (setq org-show-notification-handler 'message)
      (setq org-clock-report-include-clocking-task t))
     :config
-     (set-face-foreground 'org-todo "green")
-     (set-face-background 'org-todo "black")
      (org-clock-persistence-insinuate))
  #+end_src
 
